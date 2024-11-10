@@ -7,21 +7,14 @@ We will also using the matching type system to even do more with this simple gra
 
 //creating students variables to be computed
 fn main() {
-    let mut _score = 100;
-    let _first_student: i32 = 100;
-    let _second_student: i32 = 90;
-    let _third_student: i32 = 80;
-    let _fourth_student: i32 = 70;
-    let _fifth_student: i32 = 60;
-    let _sixth_student: f32 = 50.63;
-    let _seventh_student: f32 = 40.88;
-    let _eight_student: f32 = 30.64;
-    let _nineth_student: f32 = 20.78;
-    let _tenth_student: f32 = 15.56;
+    let _student_score:Vec<f32>= vec![100.0, 60.0, 45.6, 34.3, 15.8, 57.1, 40.2, 13.6, 12.4, 17.3];
+    //Using if control and for loop statement to check if the students fail or passed by printing ou fail if below 40 and pass if above 40.
 
-    //Using if control statement to check if the students fail or passed by printing ou fail if below 40 and pass if above 40.
-
-    if _first_student >= _score {
-        println!("First_Student passed!");
-    }
+    for (index, &score) in _student_score.iter().enumerate() {
+        if score > 40.0 {
+            println!("Student {} passed with score: {}", index + 1, score);
+        } else {
+            println!("Student {} failed with score: {}", index + 1, score);
+        }
+    } 
 }
